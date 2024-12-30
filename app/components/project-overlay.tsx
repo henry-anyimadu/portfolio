@@ -44,7 +44,7 @@ export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? '0%' : '100%' }}
       transition={{ type: 'spring', duration: 0.2 }}
-      className="fixed inset-y-0 right-0 w-1/3 bg-[#090909] p-8 shadow-xl rounded-2xl"
+      className="fixed inset-y-0 right-0 sm:w-full md:w-1/3 bg-[#090909] p-8 shadow-xl rounded-2xl"
     >
       <div className="space-y-8">
         {projects.map((project) => (

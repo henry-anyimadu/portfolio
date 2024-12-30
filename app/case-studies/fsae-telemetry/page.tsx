@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import { Navigation } from './components/navigation'
 import { ProjectHero } from './components/project-hero'
 import { ContentSection } from './components/content-section'
 import { ImageShowcase } from './components/image-showcase'
 import { CallToAction } from './components/call-to-action'
+import { ImageOverlay } from '@/app/components/image-overlay'
 
 export default function CaseStudy() {
     return (
