@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { ProjectOverlay } from './components/project-overlay'
-import { Button } from '@/components/ui/button'
+import { Button } from '../components/ui/button'
 import { CustomCursor } from './components/custom-cursor'
 
 export default function Page() {
