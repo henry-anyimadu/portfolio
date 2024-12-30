@@ -21,7 +21,7 @@ export function CallToAction() {
       }, [])
 
     return (
-        <section className={`z-20 py-24 border-t border-white/10 transition-opacity duration-500 ${canScrollPage ? 'opacity-0' : 'opacity-100'}`}>
+        <section className={`py-24 border-t border-white/10 transition-opacity duration-500 ${canScrollPage ? 'opacity-0' : 'opacity-100'}`}>
         <div className="max-w-2xl">
           <h2 className="text-3xl font-light mb-8">Explore the project</h2>
           <p className="text-lg opacity-75 mb-12">

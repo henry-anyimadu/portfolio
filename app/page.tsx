@@ -49,21 +49,21 @@ export default function Page() {
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => setSelectedSection('fabric')}
+                    onClick={() => window.open('https://www.whatsfabric.com', '_blank')}
                 >
                   Fabric
                 </Button>
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => setSelectedSection('github')}
+                    onClick={() => window.open('https://github.com/henry-anyimadu', '_blank')}
                 >
                   Github
                 </Button>
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => setSelectedSection('linkedin')}
+                    onClick={() => window.open('https://www.linkedin.com/in/anyimadu', '_blank')}
                 >
                   LinkedIn
                 </Button>

@@ -44,7 +44,7 @@ export function ImageOverlay({ images, initialIndex, onClose }: ImageOverlayProp
           <ChevronLeft size={24} />
         </button>
 
-        <div className="flex flex-col items-center w-4/5 max-w-screen-xl">
+        <div className="z-50 flex flex-col items-center w-4/5 max-w-screen-xl">
           <div className="w-4/5 md:w-full aspect-video relative">
             <Image
               src={images[currentIndex].src}
