@@ -1,28 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 interface Project {
   title: string
   color: string
+  route: string
 }
 
 const projects: Project[] = [
   {
     title: 'NASA Planetary Data System',
     color: 'bg-red-500',
+    route: '/case-studies/nasa'
   },
   {
     title: 'WashU Formula Student Telemetry System',
     color: 'bg-green-900',
+    route: '/case-studies/fsae-telemetry'
   },
   {
     title: 'Social Fabric - Stitching Society Together',
     color: 'bg-gray-400',
+    route: '/case-studies/fabric'
   },
   {
-    title: 'Wrapify - Your Actual Spotify',
+    title: 'Wrapify - Your Actual Spotify Wrapped',
     color: 'bg-black',
+    route: '/case-studies/wrapify'
+
   },
 ]
 
@@ -41,10 +48,10 @@ export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
     >
       <div className="space-y-8">
         {projects.map((project) => (
-          <div key={project.title} className="flex items-center gap-6">
+          <Link href={project.route} key={project.title} className="flex items-center gap-6">
             <div className={`w-48 h-32 rounded-xl ${project.color} shadow-lg`} />
             <h3 className="text-2xl font-medium text-white">{project.title}</h3>
-          </div>
+          </Link>
         ))}
       </div>
     </motion.div>
