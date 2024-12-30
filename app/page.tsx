@@ -4,6 +4,13 @@ import { ProjectOverlay } from './components/project-overlay'
 import { Button } from '../components/ui/button'
 import { CustomCursor } from './components/custom-cursor'
 
+// TODO: Scaffold project pages
+// TODO: Fill project pages with actual data
+// TODO: Scaffold about section and fill with data
+// TODO: Build out Contact Section
+// TODO: Update colors
+// TODO: Add micro interactions
+
 export default function Page() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null)
   const [isNavHovered, setIsNavHovered] = useState(false)
@@ -11,7 +18,7 @@ export default function Page() {
   return (
       <>
         <CustomCursor isHovered={isNavHovered} />
-        <main className="min-h-screen bg-[#3F3832] text-white p-8 relative overflow-hidden [&_*]:cursor-none">
+        <main className="min-h-screen bg-[#121212] text-white p-8 relative overflow-hidden [&_*]:cursor-none">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-7xl font-bold mb-4">Hi, I'm Henry</h1>
             <p className="text-xl max-w-xl">
@@ -27,35 +34,35 @@ export default function Page() {
               <div className="bg-[#4a4745] rounded-full p-1.5 flex gap-2">
                 <Button
                     variant="ghost"
-                    className="rounded-full px-8 py-6 text-lg hover:bg-[#3b3836] transition-colors"
+                    className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
                     onClick={() => setSelectedSection('about')}
                 >
                   About
                 </Button>
                 <Button
                     variant="ghost"
-                    className="rounded-full px-8 py-6 text-lg hover:bg-[#3b3836] transition-colors"
+                    className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
                     onClick={() => setSelectedSection('projects')}
                 >
                   Projects
                 </Button>
                 <Button
                     variant="ghost"
-                    className="rounded-full px-8 py-6 text-lg hover:bg-[#3b3836] transition-colors"
+                    className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
                     onClick={() => setSelectedSection('fabric')}
                 >
                   Fabric
                 </Button>
                 <Button
                     variant="ghost"
-                    className="rounded-full px-8 py-6 text-lg hover:bg-[#3b3836] transition-colors"
+                    className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
                     onClick={() => setSelectedSection('github')}
                 >
                   Github
                 </Button>
                 <Button
                     variant="ghost"
-                    className="rounded-full px-8 py-6 text-lg hover:bg-[#3b3836] transition-colors"
+                    className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
                     onClick={() => setSelectedSection('linkedin')}
                 >
                   LinkedIn
