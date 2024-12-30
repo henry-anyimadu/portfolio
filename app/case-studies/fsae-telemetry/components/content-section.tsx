@@ -16,7 +16,7 @@ export function ContentSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div>
                         <h3 className="text-xl font-medium mb-4">Challenge</h3>
                         <p className="opacity-75">
@@ -39,6 +39,12 @@ export function ContentSection() {
                             compared to traditional sales processes.
                         </p>
                     </div>
+                    <div>
+                    <h3 className="text-xl font-medium mb-4">Impact</h3>
+                    <p className="opacity-75">
+                      Accelerated scientific discoveries and increased public interest in space exploration.
+                    </p>
+                  </div>
                 </div>
             </div>
         </section>

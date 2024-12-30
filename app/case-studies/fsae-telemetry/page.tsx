@@ -27,12 +27,13 @@ export default function CaseStudy() {
                     <div className="text-md italic font-bold">anyimadu</div>
                 </header>
 
-                <ProjectHero />
-
-                <ContentSection />
-
+                <div className="flex flex-col lg:flex-row">
+                    <div className="w-full lg:w-2/3 pr-0 lg:pr-12">
+                        <ProjectHero />
+                        <ContentSection />  
+                    </div>
+                </div>
                 <ImageShowcase />
-
                 <CallToAction />
             </div>
         </div>
