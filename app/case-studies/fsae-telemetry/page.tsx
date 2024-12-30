@@ -1,15 +1,21 @@
+'use client'
 import Image from 'next/image'
+import { useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectHero } from './components/project-hero'
 import { ContentSection } from './components/content-section'
 import { ImageShowcase } from './components/image-showcase'
 import { CallToAction } from './components/call-to-action'
-import { ImageOverlay } from '@/app/components/image-overlay'
+import { CustomCursor } from '@/app/components/custom-cursor'
+
 
 export default function CaseStudy() {
+    const [isItemHovered, setIsItemHovered] = useState(false)
     return (
-        <div className="min-h-screen bg-[#1C1C1C] text-white">
+        <>
+        <CustomCursor isHovered = {isItemHovered} />
+        <div className="min-h-screen bg-[#1C1C1C] text-white cursor-none">
             <div className="max-w-[1800px] mx-auto px-6 md:px-12">
                 {/* Header */}
                 <header className="py-8 flex justify-between items-center">
@@ -37,6 +43,7 @@ export default function CaseStudy() {
                 <CallToAction />
             </div>
         </div>
+        </>
     )
 }
 

@@ -37,7 +37,7 @@ export function CustomCursor({ isHovered }: CustomCursorProps) {
         animate={{
           width: isHovered ? 120 : 24,
           height: isHovered ? 120 : 24,
-          backgroundColor: isHovered ? 'white' : '#4a4745',
+          backgroundColor: isHovered ? 'white' : '#FF9919',
         }}
         transition={{ duration: 0.2 }}
         className="relative rounded-full -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"

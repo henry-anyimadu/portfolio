@@ -1,5 +1,4 @@
 import OvalBadge from '@/app/components/oval-badge'
-import { BadgeType } from '@/app/types/badgeType'
 
 const techStack = [
     {name: "Vue.js", color: "#42b883"},
@@ -7,7 +6,7 @@ const techStack = [
     {name: "Arduino C", color: "#4FCCF3"},
     {name: "Redis", color: "#D82C20"},
     {name: "FastAPI", color: "#4db894"},
-
+    {name: "REST APIs", color: "#87CEEB"},
 ]
 export function ProjectHero() {
     return (

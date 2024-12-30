@@ -43,7 +43,7 @@ export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
     <motion.div
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? '0%' : '100%' }}
-      transition={{ type: 'spring', duration: 0.2 }}
+      transition={{ type: 'spring', duration: 0.6 }}
       className="fixed inset-y-0 right-0 sm:w-full md:w-1/3 bg-[#090909] p-8 shadow-xl rounded-2xl"
     >
       <div className="space-y-8">

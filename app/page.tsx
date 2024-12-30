@@ -19,7 +19,7 @@ export default function Page() {
       <>
         <CustomCursor isHovered={isNavHovered} />
         <main className="min-h-screen bg-[#121212] text-white p-8 relative overflow-hidden [&_*]:cursor-none">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-full mx-auto">
             <h1 className="text-7xl font-bold mb-4">Hi, I'm Henry</h1>
             <p className="text-xl max-w-xl">
               I'm a full-stack software engineer and founder studying Business, Computer Science, and
