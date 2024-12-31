@@ -27,11 +27,11 @@ export default function Page() {
             </p>
 
             <div
-                className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 "
                 onMouseEnter={() => setIsNavHovered(true)}
                 onMouseLeave={() => setIsNavHovered(false)}
             >
-              <div className="bg-[#4a4745] rounded-full p-1.5 flex gap-2">
+              <div className="bg-[#4a4745] rounded-full md:p-1.5 flex flex-col sm:flex-row gap-2">
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
