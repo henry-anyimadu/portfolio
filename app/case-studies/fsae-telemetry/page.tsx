@@ -8,14 +8,15 @@ import { ContentSection } from './components/content-section'
 import { ImageShowcase } from './components/image-showcase'
 import { CallToAction } from './components/call-to-action'
 import { CustomCursor } from '@/app/components/custom-cursor'
-
+import ThemeToggle from '@/app/components/theme-toggle'
 
 export default function CaseStudy() {
     const [isItemHovered, setIsItemHovered] = useState(false)
     return (
         <>
         <CustomCursor isHovered = {isItemHovered} />
-        <div className="min-h-screen bg-[#1C1C1C] text-white cursor-none">
+        <ThemeToggle />
+        <div className="min-h-screen cursor-none">
             <div className="max-w-[1800px] mx-auto px-6 md:px-12">
                 {/* Header */}
                 <header className="py-8 flex justify-between items-center">

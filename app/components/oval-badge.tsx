@@ -19,10 +19,9 @@ const OvalBadge: FC<OvalBadgeProps> = ({ data }) => {
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
     >
       <div 
-        className={`px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg`}
+        className={`px-4 py-2 text-sm font-semibold rounded-sm text-white text-center shadow-lg`}
         style={{ 
           backgroundColor: color,
-          boxShadow: `0 0 5px ${color}80` // 80 adds 50% opacity to the glow color
         }}
       >
         {name}

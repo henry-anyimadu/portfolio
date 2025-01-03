@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme styles */
 body {
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #151515;
+  color: white;
+}
+
+body.light {
+  background-color: #EFEFDF;
+  color: black;
 }
 
 @layer base {
