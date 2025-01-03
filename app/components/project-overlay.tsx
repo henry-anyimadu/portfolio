@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link';
+import { X } from 'lucide-react'
+
 
 interface Project {
   title: string
@@ -46,6 +48,13 @@ export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
       transition={{ type: 'spring', duration: 0.6 }}
       className="fixed inset-y-0 right-0 sm:w-full md:w-1/3 bg-[#090909] p-8 shadow-xl rounded-2xl"
     >
+       <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          aria-label="Close overlay"
+        >
+          <X size={24} color="white" />
+        </button>
       <div className="space-y-8">
         {projects.map((project) => (
           <Link href={project.route} key={project.title} className="flex items-center gap-6">

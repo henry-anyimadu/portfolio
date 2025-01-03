@@ -10,15 +10,22 @@ import ThemeToggle from './components/theme-toggle'
 // TODO: Build out Contact Section
 // TODO: Update colors
 // TODO: Add micro interactions (animations)
+// TODO: Replace lucide icons with phospor icons
 
 export default function Page() {
-  const [selectedSection, setSelectedSection] = useState<string | null>(null)
+  const [isProjectOverlayOpen, setIsProjectOverlayOpen] = useState(false)
   const [isNavHovered, setIsNavHovered] = useState(false)
 
   return (
       <>
         <CustomCursor isHovered={isNavHovered} />
-        <main className="min-h-screen p-8 relative overflow-hidden [&_*]:cursor-none">
+        <main 
+           className="min-h-screen p-8 relative overflow-hidden [&_*]:cursor-none"
+           onClick={() => {
+            if (isProjectOverlayOpen) {
+              setIsProjectOverlayOpen(false)
+            }
+          }}>
           <div className="max-w-full mx-auto">
             <h1 className="text-7xl font-bold mb-4">Hi, I'm Henry</h1>
             <p className="text-xl max-w-xl">
@@ -36,46 +43,35 @@ export default function Page() {
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => {
-                      setSelectedSection('null');
-                      window.location.href = '/about';
-                    }}
+                    onClick={() => {window.location.href = '/about';}}
                 >
                   About
                 </Button>
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => setSelectedSection('projects')}
+                    onClick={() => setIsProjectOverlayOpen(true)}
                 >
                   Projects
                 </Button>
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => {
-                      setSelectedSection('null');
-                      window.open('https://www.whatsfabric.com', '_blank')}
-                    }
+                    onClick={() => {window.open('https://www.whatsfabric.com', '_blank')}}
                 >
                   Fabric
                 </Button>
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => {
-                      setSelectedSection('null');
-                      window.open('https://github.com/henry-anyimadu', '_blank')
-                    }}
+                    onClick={() => {window.open('https://github.com/henry-anyimadu', '_blank')}}
                 >
                   Github
                 </Button>
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => {
-                      setSelectedSection('null');
-                      window.open('https://www.linkedin.com/in/anyimadu', '_blank')}}
+                    onClick={() => {window.open('https://www.linkedin.com/in/anyimadu', '_blank')}}
                 >
                   LinkedIn
                 </Button>
@@ -90,13 +86,12 @@ export default function Page() {
                 <p>linkedin.com/in/anyimadu ←L</p>
               </div>
             </div>
-
-            <ProjectOverlay
-                isOpen={selectedSection === 'projects'}
-                onClose={() => setSelectedSection(null)}
-            />
           </div>
         </main>
+        <ProjectOverlay
+                isOpen={isProjectOverlayOpen}
+                onClose={() => setIsProjectOverlayOpen(false)}
+            />
       </>
   )
 }
