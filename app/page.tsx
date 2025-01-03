@@ -9,7 +9,7 @@ import ThemeToggle from './components/theme-toggle'
 // TODO: Scaffold about section and fill with data
 // TODO: Build out Contact Section
 // TODO: Update colors
-// TODO: Add micro interactions
+// TODO: Add micro interactions (animations)
 
 export default function Page() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null)

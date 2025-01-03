@@ -1,8 +1,7 @@
 'use client'
 
-import { ImageShowcase } from './image-showcase'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { AnimatedText } from '@/app/components/animated-text'
+import { useEffect, useState } from 'react'
 
 export function CallToAction() {
     const [canScrollPage, setCanScrollPage] = useState(false)
@@ -23,11 +22,16 @@ export function CallToAction() {
     return (
         <section className={`py-24 border-t border-white/10 transition-opacity duration-500 ${canScrollPage ? 'opacity-0' : 'opacity-100'}`}>
         <div className="max-w-2xl">
+          <AnimatedText>
           <h2 className="text-3xl font-light mb-8">Explore the project</h2>
+          </AnimatedText>
+          <AnimatedText>
           <p className="text-lg opacity-75 mb-12">
-            Discover how we're making space exploration data more accessible 
+            Discover how we&apos;re making space exploration data more accessible 
             and meaningful for everyone.
           </p>
+          </AnimatedText>
+          <AnimatedText>
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-20 h-px bg-white/50" />
@@ -46,6 +50,7 @@ export function CallToAction() {
               </p>
             </div>
           </div>
+          </AnimatedText>
         </div>
       </section>
     )

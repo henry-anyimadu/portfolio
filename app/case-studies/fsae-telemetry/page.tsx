@@ -1,14 +1,13 @@
 'use client'
-import Image from 'next/image'
 import { useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
 import { ProjectHero } from './components/project-hero'
 import { ContentSection } from './components/content-section'
 import { ImageShowcase } from './components/image-showcase'
 import { CallToAction } from './components/call-to-action'
 import { CustomCursor } from '@/app/components/custom-cursor'
 import ThemeToggle from '@/app/components/theme-toggle'
+import Link from 'next/link'
 
 export default function CaseStudy() {
     const [isItemHovered, setIsItemHovered] = useState(false)

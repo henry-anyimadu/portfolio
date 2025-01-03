@@ -6,6 +6,7 @@ import ThemeToggle from '../components/theme-toggle'
 import { CustomCursor } from '../components/custom-cursor'
 import { useState } from 'react'
 import { EmojiProvider, Emoji } from "react-apple-emojis"
+import { AnimatedText } from '../components/animated-text'
 import emojiData from "react-apple-emojis/src/data.json"
 
 const clientsLeft = [
@@ -49,16 +50,22 @@ export default function AboutPage() {
 
         {/* Bio Section */}
         <section className="mb-32">
+          <AnimatedText>
           <h2 className="text-xl mb-8">BIO</h2>
+          </AnimatedText>
+          <AnimatedText>
           <h1 className="text-6xl md:text-7xl font-normal leading-[1.1] max-w-6xl mb-32">
             Hello! I'm a Ghanaian<Emoji name="flag-ghana" className="inline-block max-w-10" />
             -American<Emoji name="flag-united-states" className="inline-block max-w-10" />
             founder and software engineer. I have a passion for telling impactful stories through innovative products.
           </h1>
-
+          </AnimatedText>
           {/* Contact Info */}
           <div className="space-y-2">
+            <AnimatedText>
           <h2 className="text-xl mb-8">CONTACT</h2>
+          </AnimatedText>
+          <AnimatedText>
             <div className="flex items-center gap-2">
               <span className="text-sm">EMAIL →</span>
               <Link 
@@ -86,13 +93,17 @@ export default function AboutPage() {
                 linkedin.com/in/anyimadu
               </Link>
             </div>
+            </AnimatedText>
           </div>
         </section>
 
         {/* Tech Stack Section */}
         <section>
+          <AnimatedText>
         <h2 className="text-xl mb-8">TECH STACK</h2>
-        <div className="grid grid-cols-2 gap-x-2 max-w-3xl">
+        </AnimatedText>
+        <AnimatedText>
+          <div className="grid grid-cols-2 gap-x-2 max-w-3xl">
             <div className="flex flex-col col-span-1 max-w-56 space-y-1">
               {techStackRight.map((badge, index) => (
                 <OvalBadge key={index} data={badge} />
@@ -104,6 +115,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+          </AnimatedText>
         </section>
       </div>
     </main>
