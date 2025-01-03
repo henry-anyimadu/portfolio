@@ -19,7 +19,7 @@ export function AnimatedText({ children, className = '' }: AnimatedTextProps) {
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className={className}
     >
       {children}

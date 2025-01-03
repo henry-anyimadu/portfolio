@@ -34,8 +34,12 @@ const images: ProjectImages[] = [
     },
   ]
 
+interface ImageShowcaseProps {
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}
 
-export function ImageShowcase() {
+export function ImageShowcase({ onMouseEnter, onMouseLeave }: ImageShowcaseProps) {
 const containerRef = useRef<HTMLDivElement>(null)
   const imagesRef = useRef<HTMLDivElement>(null)
   const [canScrollPage, setCanScrollPage] = useState(false)

@@ -39,7 +39,7 @@ export default function CaseStudy() {
                         <ContentSection />  
                     </div>
                 </div>
-                <ImageShowcase />
+                <ImageShowcase onMouseEnter={() => setIsItemHovered(true)} onMouseLeave={() => setIsItemHovered(false)}/>
                 <CallToAction />
             </div>
         </div>

@@ -11,6 +11,7 @@ import ThemeToggle from './components/theme-toggle'
 // TODO: Update colors
 // TODO: Add micro interactions (animations)
 // TODO: Replace lucide icons with phospor icons
+// TODO: Replace color blocks with images
 
 export default function Page() {
   const [isProjectOverlayOpen, setIsProjectOverlayOpen] = useState(false)
@@ -27,9 +28,9 @@ export default function Page() {
             }
           }}>
           <div className="max-w-full mx-auto">
-            <h1 className="text-7xl font-bold mb-4">Hi, I'm Henry</h1>
+            <h1 className="text-7xl font-bold mb-4">Hi, I&apos;m Henry</h1>
             <p className="text-xl max-w-xl">
-              I'm a full-stack software engineer and founder studying Business, Computer Science, and
+              I&apos;m a full-stack software engineer and founder studying Business, Computer Science, and
               Human-Computer Interaction at WashU
             </p>
             <ThemeToggle />
