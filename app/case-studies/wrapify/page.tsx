@@ -43,8 +43,7 @@ export default function CaseStudy() {
                     onMouseLeave={() => setIsItemHovered(false)}
                 >
                     <ImageShowcase />
-                </div>
-                <div className="h-screen lg:h-0"></div>
+                </div>                <div className="h-screen lg:h-0"></div>
             </div>
         </div>
         </>

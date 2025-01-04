@@ -19,7 +19,7 @@ const projects: Project[] = [
   },
   {
     title: 'WashU Formula Student Telemetry System',
-    color: 'bg-green-900',
+    color: 'app/case-studies/fsae-telemetry/images/racecar.jpg',
     route: '/case-studies/fsae-telemetry'
   },
   {
@@ -58,7 +58,7 @@ export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
       <div className="space-y-8">
         {projects.map((project) => (
           <Link href={project.route} key={project.title} className="flex items-center gap-6">
-            <div className={`w-48 h-32 rounded-xl ${project.color} shadow-lg`} />
+            <div className={`w-48 h-32 rounded-xl bg-[${project.color}] shadow-lg`} />
             <h3 className="text-2xl font-medium text-white">{project.title}</h3>
           </Link>
         ))}

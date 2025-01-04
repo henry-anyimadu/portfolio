@@ -102,7 +102,7 @@ export default function AboutPage() {
         <h2 className="text-xl mb-8">TECH STACK</h2>
         </AnimatedText>
         <AnimatedText>
-          <div className="grid grid-cols-2 gap-x-2 max-w-3xl">
+          <div className="grid grid-cols-2 gap-x-2 max-w-3xl max-h-2xl">
             <div className="flex flex-col col-span-1 max-w-56 space-y-1">
               {techStackRight.map((badge, index) => (
                 <OvalBadge key={index} data={badge} />

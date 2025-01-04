@@ -6,9 +6,6 @@ import { CustomCursor } from './components/custom-cursor'
 import ThemeToggle from './components/theme-toggle'
 
 // TODO: Fill project pages with actual data
-// TODO: Scaffold about section and fill with data
-// TODO: Build out Contact Section
-// TODO: Update colors
 // TODO: Add micro interactions (animations)
 // TODO: Replace lucide icons with phospor icons
 // TODO: Replace color blocks with images
@@ -29,18 +26,18 @@ export default function Page() {
           }}>
           <div className="max-w-full mx-auto">
             <h1 className="text-7xl font-bold mb-4">Hi, I&apos;m Henry</h1>
-            <p className="text-xl max-w-xl">
+            <p className="sm:text-lg text-xl max-w-xl">
               I&apos;m a full-stack software engineer and founder studying Business, Computer Science, and
               Human-Computer Interaction at WashU
             </p>
             <ThemeToggle />
 
             <div
-                className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 "
+                className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 onMouseEnter={() => setIsNavHovered(true)}
                 onMouseLeave={() => setIsNavHovered(false)}
             >
-              <div className="bg-[#4a4745] rounded-full md:p-1.5 text-white flex flex-col sm:flex-row gap-2">
+              <div className="sm:opacity-0 md:opacity-100 md:bg-[#4a4745] rounded-full md:p-1.5 text-white flex flex-col sm:flex-row gap-2">
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
