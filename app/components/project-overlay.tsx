@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import { X } from 'lucide-react'
+import { useState } from 'react'
 
 
 interface Project {
@@ -13,24 +14,24 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'NASA Planetary Data System',
-    color: 'bg-red-500',
+    title: 'NASA Planetary Data System - Geosciences Node',
+    color: 'bg-blue-700',
     route: '/case-studies/nasa'
   },
   {
     title: 'WashU Formula Student Telemetry System',
-    color: 'app/case-studies/fsae-telemetry/images/racecar.jpg',
+    color: 'bg-yellow-500',
     route: '/case-studies/fsae-telemetry'
   },
   {
     title: 'Social Fabric - Stitching Society Together',
-    color: 'bg-gray-400',
-    route: '/case-studies/fabric'
+    color: 'bg-red-500',
+    route: 'https://www.whatsfabric.com'
   },
   {
-    title: 'Wrapify - Your Actual Spotify Wrapped',
-    color: 'bg-black',
-    route: '/case-studies/wrapify'
+    title: 'Wrapify - Your Actual Spotify Wrapped [WIP]',
+    color: 'bg-green-600',
+    route: 'https://wrapify.henryany.com'
 
   },
 ]
@@ -38,9 +39,10 @@ const projects: Project[] = [
 interface ProjectOverlayProps {
   isOpen: boolean
   onClose: () => void
+  setIsItemHovered: (value: boolean) => void
 }
 
-export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
+export function ProjectOverlay({ isOpen, onClose, setIsItemHovered }: ProjectOverlayProps) {
   return (
     <motion.div
       initial={{ x: '100%' }}
@@ -57,8 +59,14 @@ export function ProjectOverlay({ isOpen, onClose }: ProjectOverlayProps) {
         </button>
       <div className="space-y-8">
         {projects.map((project) => (
-          <Link href={project.route} key={project.title} className="flex items-center gap-6">
-            <div className={`w-48 h-32 rounded-xl bg-[${project.color}] shadow-lg`} />
+          <Link 
+            href={project.route} 
+            key={project.title} 
+            className="flex items-center gap-6 hover:bg-gray-800/50 p-4 rounded-xl transition-colors"
+            onMouseEnter={() => setIsItemHovered(true)}
+            onMouseLeave={() => setIsItemHovered(false)}
+          >
+            <div className={`w-48 h-32 rounded-xl ${project.color} shadow-lg`} />
             <h3 className="text-2xl font-medium text-white">{project.title}</h3>
           </Link>
         ))}

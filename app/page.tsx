@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { ProjectOverlay } from './components/project-overlay'
 import { Button } from '../components/ui/button'
 import { CustomCursor } from './components/custom-cursor'
@@ -9,10 +9,17 @@ import ThemeToggle from './components/theme-toggle'
 // TODO: Add micro interactions (animations)
 // TODO: Replace lucide icons with phospor icons
 // TODO: Replace color blocks with images
+interface OvalBadgeProps {
+  data: {
+    name: string;
+    color: string;
+  }
+}
 
-export default function Page() {
-  const [isProjectOverlayOpen, setIsProjectOverlayOpen] = useState(false)
+export default function HomePage() {
+  const [isHovered, setIsHovered] = useState(false)
   const [isNavHovered, setIsNavHovered] = useState(false)
+  const [isProjectOverlayOpen, setIsProjectOverlayOpen] = useState(false)
 
   return (
       <>
@@ -75,7 +82,9 @@ export default function Page() {
                 </Button>
               </div>
             </div>
-
+            <div className="fixed bottom-5 right-1/2space-y-1">
+              <p>Copyright Henry Anyimadu 2025</p>
+            </div>
             <div className="fixed bottom-8 right-8 text-right">
               <h2 className="text-7xl font-bold mb-4">Contact</h2>
               <div className="space-y-1">
@@ -89,6 +98,7 @@ export default function Page() {
         <ProjectOverlay
                 isOpen={isProjectOverlayOpen}
                 onClose={() => setIsProjectOverlayOpen(false)}
+                setIsItemHovered={setIsNavHovered}
             />
       </>
   )

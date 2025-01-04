@@ -48,12 +48,18 @@ export default function AboutPage() {
           <h2 className="text-xl mb-8">BIO</h2>
           </AnimatedText>
           <AnimatedText>
-          <h1 className="text-6xl md:text-7xl font-normal leading-[1.1] max-w-6xl mb-32">
+          <h1 className="text-6xl md:text-7xl font-normal leading-[1.1] max-w-6xl mb-24">
             Hello! I&apos;m a Ghanaian<Emoji name="flag-ghana" className="inline-block max-w-10" />
             -American<Emoji name="flag-united-states" className="inline-block max-w-10" />
             founder and software engineer. I have a passion for telling powerful stories through innovative products
             that solve real world problems.
           </h1>
+          <h2 className="text-4xl md:text-6xl font-normal leading-[1.1] max-w-6xl mb-32">
+            When I&apos;m not programming, you can find me on the golf course<Emoji name="man-golfing-medium-dark-skin-tone" className="inline-block max-w-10" />, 
+            in the gym<Emoji name="person-lifting-weights-medium-dark-skin-tone" className="inline-block max-w-10" />,
+             or playing the piano<Emoji name="musical-keyboard" className="inline-block max-w-10" />.
+            I&apos;m also an avid fan of motorsports<Emoji name="racing-car" className="inline-block max-w-10" /> and soccer<Emoji name="soccer-ball" className="inline-block max-w-10" />.
+          </h2>
           </AnimatedText>
           {/* Contact Info */}
           <div className="space-y-2">
@@ -107,9 +113,6 @@ export default function AboutPage() {
               {techStackRight.map((badge, index) => (
                 <OvalBadge key={index} data={badge} />
               ))}
-            </div>
-            <div className="flex flex-col col-span-1 max-w-56 space-y-1">
-              Placeholder!
             </div>
           </div>
           </AnimatedText>
