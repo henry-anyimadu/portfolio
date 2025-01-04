@@ -8,29 +8,29 @@ import { ProjectImages } from '@/app/types/projectImages'
 
 const images: ProjectImages[] = [
     {
-        src: '/dashboardscreenshot.png?height=1080&width=1920',
-        alt: 'NASA Project Image 1',
-        caption: 'Image caption for NASA project visualization'
-    },
-    {
         src: '/racecar.jpg?height=1080&width=1920',
-        alt: 'NASA Project Image 1',
-        caption: 'Image caption for NASA project visualization'
+        alt: 'FSAE Project Image',
+        caption: 'Our racecar competes against 100+ teams internationally'
     },
     {
-        src: '/dashboardscreenshot.png?height=1080&width=1920',
-        alt: 'NASA Project Image 1',
-        caption: 'Image caption for NASA project visualization'
+        src: '/ergoscreen.jpeg',
+        alt: 'FSAE Project Image',
+        caption: 'Real-time telemetry dashboard operating at 5hz'
     },
     {
-        src: '/dashboardscreenshot.png?height=1080&width=1920',
-        alt: 'NASA Project Image 1',
-        caption: 'Image caption for NASA project visualization'
+        src: '/aero.jpeg',
+        alt: 'FSAE Project Image',
+        caption: 'Charting library courtesy of SciChart'
     },
     {
-        src: '/dashboardscreenshot.png?height=1080&width=1920',
-        alt: 'NASA Project Image 1',
-        caption: 'Image caption for NASA project visualization'
+        src: '/dashboardscreenshot.png',
+        alt: 'FSAE Project Image',
+        caption: 'System-focused dashboard for team members'
+    },
+    {
+        src: '/team.jpeg',
+        alt: 'FSAE Project Image',
+        caption: 'Over 80 members of the WashU FSAE team utilize this software'
     },
   ]
 

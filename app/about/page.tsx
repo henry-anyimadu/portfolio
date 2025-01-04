@@ -49,7 +49,7 @@ export default function AboutPage() {
           </AnimatedText>
           <AnimatedText>
           <h1 className="text-6xl md:text-7xl font-normal leading-[1.1] max-w-6xl mb-32">
-            Hello! I'm a Ghanaian<Emoji name="flag-ghana" className="inline-block max-w-10" />
+            Hello! I&apos;m a Ghanaian<Emoji name="flag-ghana" className="inline-block max-w-10" />
             -American<Emoji name="flag-united-states" className="inline-block max-w-10" />
             founder and software engineer. I have a passion for telling powerful stories through innovative products
             that solve real world problems.
