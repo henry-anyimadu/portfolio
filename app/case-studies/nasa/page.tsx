@@ -42,7 +42,8 @@ export default function CaseStudy() {
                     onMouseEnter={() => setIsItemHovered(true)}
                     onMouseLeave={() => setIsItemHovered(false)}
                 >
-                </div>                <div className="h-screen lg:h-0"></div>
+                </div>               
+                <div className="h-screen lg:h-0"></div>
             </div>
         </div>
         </>
