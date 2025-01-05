@@ -7,25 +7,21 @@ export function ContentSection() {
                 <div>
                     <AnimatedText>
                     <h2 className="text-4xl md:text-5xl font-light mb-8">
-                        End-to-end data analysis system for motorsports telemetry
+                        Undergraduate Research and Software Engineering
                     </h2>
                     </AnimatedText>
                     <AnimatedText>
                     <p className="text-lg leading-relaxed opacity-75">
-                    I’m the Head of Data of WashU Racing, an 80-person Formula SAE team based out of Washington University in St. Louis. 
-                    Every year, we build a Formula-style race car to compete against 100+ universities around the world. 
-                    From Computer Scientists to Mechanical Engineers to Business students, we’re an extremely diverse, cross-functional team. 
-                    With the final competition in May, it’s important that we’re testing the car throughout the year to ensure that our components 
-                    work as intended. How do we know that the hundreds of components on our car work? Data.
+                    The NASA Planetary Data System - Geosciences Node is the home of NASA&apos;s Geoscientific mission data. Data from satellites, Mars Rovers, and lunar
+                    landers are stored here. However, The image data was all stored in a low-quality JPEG format, making it difficult for researchers to analyze.
                     </p>
                     </AnimatedText>
                     <br />
                     <br />
                     <AnimatedText>
                     <p className="text-lg leading-relaxed opacity-75">
-                    As long as the car is on, we are constantly sending sensor measurements and driver inputs to a designated laptop via an RF radio operating at 5Hz. 
-                    This RF signal transfers a string of comma-separated values to the website’s backend, which allows us to store the data for future analysis. 
-                    The data is then sent via API calls to our Vue.js frontend, which uses SciChart Line and Scatter plots to display our data.
+                    To combat this issue, I developed a Python script that converts these images into a high-quality PNG or TIFF format. This script was made accessible to researchers
+                    across the other Planetary Data System nodes, allowing for a more in-depth analysis of the worlds beyond our own.
                     </p>
                     </AnimatedText>
                 </div>
@@ -37,9 +33,7 @@ export function ContentSection() {
                         </AnimatedText>
                         <AnimatedText>
                         <p className="opacity-75">
-                            Create an end-to-end live data system. This system needs to collect CAN data from a race car,
-                            send it to cloud storage, and display it on a user-friendly full-stack web app—in 1/10th of
-                            a second.
+                            Create a system to transform planetary mission data into high-quality images for research and education.
                         </p>
                         </AnimatedText>
                     </div>
@@ -47,8 +41,7 @@ export function ContentSection() {
                         <AnimatedText>
                         <h3 className="text-xl font-medium mb-4">Solution</h3>
                         <p className="opacity-75">
-                            A full-stack system that collects data from the car, stores it in cloud storage, and displays it on a user-friendly web app.
-                            The system is designed to be modular and scalable, allowing for easy integration of new sensors and data sources.      
+                            An easy-to-use Jupyter Notebook, compatible with mission data across the Planetary Data System.      
                         </p>
                         </AnimatedText>
                     </div>
@@ -56,8 +49,7 @@ export function ContentSection() {
                         <AnimatedText>
                         <h3 className="text-xl font-medium mb-4">Outcome</h3>
                         <p className="opacity-75">
-                            A never-before-seen data system that allows us to collect, store, and display data from the car in real-time.
-                            This system has saved the team hours of manual data collection, and thousands of dollars compared to the alternatives.
+                            All of the mission data from the Curiosity and Perseverance rovers are now available in high-quality PNG and TIFF formats.
                         </p>
                         </AnimatedText>
                     </div>
@@ -65,7 +57,7 @@ export function ContentSection() {
                         <AnimatedText>
                         <h3 className="text-xl font-medium mb-4">Impact</h3>
                         <p className="opacity-75">
-                        I personally built the backend, frontend, and database. I also assisted with the hardware design of the RF radio sender and receiver.
+                        This script was made by myself, with the assistance of 3rd party libraries.
                         </p>
                         </AnimatedText>
                     </div>
