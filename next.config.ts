@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   },
   // Required for GitHub Pages
   basePath: "",
-  assetPrefix: "",
+  assetPrefix: "https://henryany.com",
 };
 
 export default nextConfig;
