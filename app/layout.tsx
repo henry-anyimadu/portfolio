@@ -24,12 +24,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Add the prefix logic here
+  const prefix = process.env.NODE_ENV === 'production' 
+    ? 'https://www.henryany.com' 
+    : '';
+
   return (
     <html lang="en">
+      <head>
+        {/* Add font preloading */}
+        <link 
+          rel="preload" 
+          href={`${prefix}/_next/static/media/569ce4b8f30dc480-s.p.woff2`} 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous" 
+        />
+        <link 
+          rel="preload" 
+          href={`${prefix}/_next/static/media/93f479601ee12b01-s.p.woff2`} 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous" 
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <ThemeProvider>
+        <ThemeProvider>
           <ThemeToggle />
           {children}
         </ThemeProvider>
