@@ -7,7 +7,14 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: '/portfolio',
-  assetPrefix: '/portfolio/',
+  assetPrefix: process.env.NODE_ENV === 'production' 
+  ? 'https://www.henryany.com'
+  : '',
+  trailingSlash: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  }
 };
 
 export default nextConfig;
