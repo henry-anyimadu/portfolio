@@ -11,10 +11,6 @@ const nextConfig: NextConfig = {
   // Correctly handle asset prefixes for both development and production
   basePath: isGithubActions ? `/${repo}` : '',
   assetPrefix: isGithubActions ? `/${repo}/` : '',
-  // Enable static file tracing
-  experimental: {
-    forceSwcTransforms: true,
-  },
 };
 
 export default nextConfig;
