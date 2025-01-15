@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29bf0793-bf79-41c6-954a-a3077ed005ac" name="Changes" comment="Created inital project pages" />
+    <list default="true" id="29bf0793-bf79-41c6-954a-a3077ed005ac" name="Changes" comment="deleting github hosting">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "henry-anyimadu"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/henry-anyimadu/portfolio.git",
+    "accountId": "bbb1a3dc-6832-4db0-a9a5-b3c920801f5c"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -91,6 +106,7 @@
       <workItem from="1735512504593" duration="807000" />
       <workItem from="1735513321387" duration="45000" />
       <workItem from="1735513368526" duration="12635000" />
+      <workItem from="1736975800516" duration="1360000" />
     </task>
     <task id="LOCAL-00001" summary="Add files to Git">
       <option name="closed" value="true" />
@@ -132,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735534014220</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deleting github hosting">
+      <option name="closed" value="true" />
+      <created>1736976037710</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736976037710</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +178,7 @@
     <MESSAGE value="Add button files to Git" />
     <MESSAGE value="Mapped out the order that things need to be done" />
     <MESSAGE value="Created inital project pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created inital project pages" />
+    <MESSAGE value="deleting github hosting" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleting github hosting" />
   </component>
 </project>
