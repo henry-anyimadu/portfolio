@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/portfolio',
+  basePath: '',
   assetPrefix: process.env.NODE_ENV === 'production' 
   ? 'https://www.henryany.com'
   : '',
