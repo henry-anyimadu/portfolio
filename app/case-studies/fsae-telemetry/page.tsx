@@ -35,7 +35,7 @@ export default function CaseStudy() {
                 <div className="flex flex-col lg:flex-row">
                     <div className="w-full lg:w-2/3 pr-0 lg:pr-12">
                         <ProjectHero />
-                        <ContentSection />  
+                        <ContentSection />
                     </div>
                 </div>
                 <div
