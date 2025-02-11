@@ -64,7 +64,6 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-          <Analytics />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -72,6 +71,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ThemeToggle />
           {children}
+            <Analytics />
         </ThemeProvider>
       </body>
     </html>
