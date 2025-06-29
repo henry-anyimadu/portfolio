@@ -5,8 +5,6 @@ import { Button } from '../components/ui/button'
 import { CustomCursor } from './components/custom-cursor'
 import ThemeToggle from './components/theme-toggle'
 
-// TODO: Fill project pages with actual data
-// TODO: Add micro interactions (animations)
 // TODO: Replace lucide icons with phospor icons
 // TODO: Replace color blocks with images
 interface OvalBadgeProps {
@@ -24,7 +22,7 @@ export default function HomePage() {
   return (
       <>
         <CustomCursor isHovered={isNavHovered} />
-        <main 
+        <main
            className="min-h-screen p-8 relative overflow-hidden [&_*]:cursor-none"
            onClick={() => {
             if (isProjectOverlayOpen) {

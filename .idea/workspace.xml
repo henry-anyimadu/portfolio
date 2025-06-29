@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29bf0793-bf79-41c6-954a-a3077ed005ac" name="Changes" comment="Updated SEO" />
+    <list default="true" id="29bf0793-bf79-41c6-954a-a3077ed005ac" name="Changes" comment="Fixed site analytics">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +109,9 @@
       <workItem from="1735513368526" duration="12635000" />
       <workItem from="1736975800516" duration="2426000" />
       <workItem from="1736979141209" duration="431000" />
+      <workItem from="1739249332977" duration="2145000" />
+      <workItem from="1741107417839" duration="808000" />
+      <workItem from="1751229136121" duration="859000" />
     </task>
     <task id="LOCAL-00001" summary="Add files to Git">
       <option name="closed" value="true" />
@@ -170,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736979567834</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added site analytics">
+      <option name="closed" value="true" />
+      <created>1739249496148</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739249496148</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed site analytics">
+      <option name="closed" value="true" />
+      <created>1739249737042</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739249737044</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +218,8 @@
     <MESSAGE value="deleting github hosting" />
     <MESSAGE value="Updated build settings for Vercel" />
     <MESSAGE value="Updated SEO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated SEO" />
+    <MESSAGE value="Added site analytics" />
+    <MESSAGE value="Fixed site analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed site analytics" />
   </component>
 </project>
