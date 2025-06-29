@@ -55,7 +55,7 @@ export default function AboutPage() {
             that solve real world problems.
           </h1>
           <h2 className="text-4xl md:text-6xl font-normal leading-[1.1] max-w-6xl mb-32">
-            I&apos;m currently a Software Engineering Intern at Boeing, using my skills to help protect our nation's skies.
+            I&apos;m currently a Software Engineering Intern at Boeing, using my skills to help protect our nation&apos;s skies.
             When I&apos;m not programming, you can find me on the golf course<Emoji name="man-golfing-medium-dark-skin-tone" className="inline-block max-w-10" />,
             in the gym<Emoji name="person-lifting-weights-medium-dark-skin-tone" className="inline-block max-w-10" />,
              or playing the piano<Emoji name="musical-keyboard" className="inline-block max-w-10" />.
