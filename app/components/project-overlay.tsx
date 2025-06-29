@@ -24,14 +24,14 @@ const projects: Project[] = [
     route: '/case-studies/fsae-telemetry'
   },
   {
-    title: 'Social Fabric - Stitching Society Together',
+    title: 'Social Fabric - Consumer Social Tech Startup',
     color: 'bg-red-500',
     route: 'https://www.whatsfabric.com'
   },
   {
-    title: 'Wrapify - Your Actual Spotify Wrapped [WIP]',
+    title: 'Wrapify - Your Actual Spotify Wrapped',
     color: 'bg-green-600',
-    route: 'https://wrapify.henryany.com'
+    route: 'https://github.com/henry-anyimadu/better-spotify-wrapped'
 
   },
 ]
@@ -59,9 +59,9 @@ export function ProjectOverlay({ isOpen, onClose, setIsItemHovered }: ProjectOve
         </button>
       <div className="space-y-8">
         {projects.map((project) => (
-          <Link 
-            href={project.route} 
-            key={project.title} 
+          <Link
+            href={project.route}
+            key={project.title}
             className="flex items-center gap-6 hover:bg-gray-800/50 p-4 rounded-xl transition-colors"
             onMouseEnter={() => setIsItemHovered(true)}
             onMouseLeave={() => setIsItemHovered(false)}

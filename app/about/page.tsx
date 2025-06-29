@@ -55,7 +55,8 @@ export default function AboutPage() {
             that solve real world problems.
           </h1>
           <h2 className="text-4xl md:text-6xl font-normal leading-[1.1] max-w-6xl mb-32">
-            When I&apos;m not programming, you can find me on the golf course<Emoji name="man-golfing-medium-dark-skin-tone" className="inline-block max-w-10" />, 
+            I&apos;m currently a Software Engineering Intern at Boeing, using my skills to help protect our nation's skies.
+            When I&apos;m not programming, you can find me on the golf course<Emoji name="man-golfing-medium-dark-skin-tone" className="inline-block max-w-10" />,
             in the gym<Emoji name="person-lifting-weights-medium-dark-skin-tone" className="inline-block max-w-10" />,
              or playing the piano<Emoji name="musical-keyboard" className="inline-block max-w-10" />.
             I&apos;m also an avid fan of motorsports<Emoji name="racing-car" className="inline-block max-w-10" /> and soccer<Emoji name="soccer-ball" className="inline-block max-w-10" />.
@@ -69,17 +70,17 @@ export default function AboutPage() {
           <AnimatedText>
             <div className="flex items-center gap-2">
               <span className="text-sm">EMAIL →</span>
-              <Link 
-                href="mailto:henry@whatsfabric.com" 
+              <Link
+                href="mailto:jnrhenryany@gmail.com"
                 className="text-sm underline underline-offset-4"
               >
-                henry@whatsfabric.com
+                jnrhenryany@gmail.com
               </Link>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-sm">LINKEDIN →</span>
-              <Link 
-                href="https://linkedin.com/in/anyimadu" 
+              <Link
+                href="https://linkedin.com/in/anyimadu"
                 className="text-sm underline underline-offset-4"
               >
                 linkedin.com/in/anyimadu
@@ -87,8 +88,8 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-sm">RESUME →</span>
-              <Link 
-                href="https://drive.google.com/file/d/1Qc62CiG50vCyWQHHa9YpGpMJwww-6fY7/view?usp=sharing" 
+              <Link
+                href="https://drive.google.com/file/d/1Qc62CiG50vCyWQHHa9YpGpMJwww-6fY7/view?usp=sharing"
                 className="text-sm underline underline-offset-4"
               >
                 Click to View
@@ -96,7 +97,7 @@ export default function AboutPage() {
             </div>
             <br />
             <div className="flex items-center gap-2">
-              <span className="text-sm">I&apos;m passionate about all things entrepreneurship, product management, marketing, and Human-Computer Interaction.</span>
+              <span className="text-sm">I&apos;m passionate about all things entrepreneurship, product management, engineering, and Human-Computer Interaction.</span>
             </div>
             </AnimatedText>
           </div>

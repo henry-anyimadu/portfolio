@@ -60,9 +60,9 @@ export default function HomePage() {
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => {window.open('https://www.whatsfabric.com', '_blank')}}
+                    onClick={() => {window.open("https://drive.google.com/file/d/1NWTjeRCuF6fta6JR5MbPKpPJu1GOmZtH/view?usp=sharing", '_blank')}}
                 >
-                  Fabric
+                  Resume
                 </Button>
                 <Button
                     variant="ghost"
