@@ -86,9 +86,9 @@ export default function HomePage() {
             <div className="fixed bottom-8 right-8 text-right">
               <h2 className="text-7xl font-bold mb-4">Contact</h2>
               <div className="space-y-1">
-                <p>henry@whatsfabric.com ←F</p>
-                <p>jnrhenryany@gmail.com ←P</p>
-                <p>linkedin.com/in/anyimadu ←L</p>
+                <p>anyimadu@wustl.edu ←SCHOOL</p>
+                <p>jnrhenryany@gmail.com ←PERSONAL</p>
+                <p>linkedin.com/in/anyimadu ←LINKEDIN</p>
               </div>
             </div>
           </div>
