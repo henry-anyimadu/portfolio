@@ -45,7 +45,7 @@ export default function HomePage() {
               <div className="sm:opacity-0 md:opacity-100 md:bg-[#4a4745] rounded-full md:p-1.5 text-white flex flex-col sm:flex-row gap-2">
                 <Button
                     variant="ghost"
-                    className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
+                    className="rounded-full px-8 py-6 text-lg bg-[#e6d3c7] text-black transition-colors"
                     onClick={() => {window.location.href = '/about';}}
                 >
                   About
@@ -60,7 +60,7 @@ export default function HomePage() {
                 <Button
                     variant="ghost"
                     className="rounded-full px-8 py-6 text-lg bg-[#3b3836] transition-colors"
-                    onClick={() => {window.open("https://drive.google.com/file/d/1NWTjeRCuF6fta6JR5MbPKpPJu1GOmZtH/view?usp=sharing", '_blank')}}
+                    onClick={() => {window.open("https://drive.google.com/file/d/1ZHvwyN8wk5JtcYKoAeANcnzaP-pWrl7U/view?usp=sharing", '_blank')}}
                 >
                   Resume
                 </Button>

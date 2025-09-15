@@ -14,14 +14,20 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'NASA Planetary Data System - Geosciences Node',
-    color: 'bg-blue-700',
-    route: '/case-studies/nasa'
-  },
-  {
     title: 'WashU Formula Student Telemetry System',
     color: 'bg-yellow-500',
     route: '/case-studies/fsae-telemetry'
+  },
+  {
+    title: 'Workday Student to Google Calendar Scheduler',
+    color: 'bg-purple-600',
+    route: 'https://parser.henryany.com'
+  },
+  {
+    title: 'Wrapify - Your Actual Spotify Wrapped',
+    color: 'bg-green-600',
+    route: 'https://github.com/henry-anyimadu/better-spotify-wrapped'
+
   },
   {
     title: 'Social Fabric - Consumer Social Tech Startup',
@@ -29,10 +35,14 @@ const projects: Project[] = [
     route: 'https://www.whatsfabric.com'
   },
   {
-    title: 'Wrapify - Your Actual Spotify Wrapped',
-    color: 'bg-green-600',
-    route: 'https://github.com/henry-anyimadu/better-spotify-wrapped'
-
+    title: 'African Architecture - A Figma Project',
+    color: 'bg-orange-500',
+    route: '/case-studies/african-architecture'
+  },
+  {
+    title: 'NASA Planetary Data System - Geosciences Node',
+    color: 'bg-blue-700',
+    route: '/case-studies/nasa'
   },
 ]
 
