@@ -51,18 +51,23 @@ export default function AboutPage() {
           </AnimatedText>
           <AnimatedText>
           <h1 className="text-6xl md:text-7xl font-normal leading-[1.1] max-w-6xl mb-24">
-            Hello! I&apos;m a Ghanaian<Emoji name="flag-ghana" className="inline-block max-w-10" />
-            -American<Emoji name="flag-united-states" className="inline-block max-w-10" />
-            founder and software engineer. I have a passion for telling powerful stories through innovative products
+            Hello! I&apos;m a Ghanaian<Emoji name="flag-ghana" className="inline-block max-w-14" />
+            -American<Emoji name="flag-united-states" className="inline-block max-w-14" />
+            founder and current Software Engineer Intern at NVIDIA. I have a passion for telling powerful stories through innovative products
             that solve real world problems.
           </h1>
-          <h2 className="text-4xl md:text-6xl font-normal leading-[1.1] max-w-6xl mb-32">
-            I&apos;ve recently completed a Software Engineering Internship at Boeing, using my skills to help protect our nation&apos;s skies.
-            When I&apos;m not programming, you can find me on the golf course<Emoji name="man-golfing-medium-dark-skin-tone" className="inline-block max-w-10" />,
-            in the gym<Emoji name="person-lifting-weights-medium-dark-skin-tone" className="inline-block max-w-10" />,
-             or playing the piano<Emoji name="musical-keyboard" className="inline-block max-w-10" />.
-            I&apos;m also an avid fan of motorsports<Emoji name="racing-car" className="inline-block max-w-10" /> and soccer<Emoji name="soccer-ball" className="inline-block max-w-10" />.
-          </h2>
+            <h2 className="text-4xl md:text-6xl font-normal leading-[1.1] max-w-6xl mb-32">
+              I&apos;m currently working as a Software Engineering Intern at NVIDIA in the
+              Autonomous Vehicles division, helping power the future of transit. <br/><br/>
+              I&apos;ve recently completed a Software Engineering Internship at Boeing, using my skills to help protect
+              our nation&apos;s skies.<br/><br/>
+              When I&apos;m not programming, you can find me on the golf course<Emoji
+                name="man-golfing-medium-dark-skin-tone" className="inline-block max-w-14"/>,
+              in the gym<Emoji name="person-lifting-weights-medium-dark-skin-tone" className="inline-block max-w-14"/>,
+              or playing the piano<Emoji name="musical-keyboard" className="inline-block max-w-14"/>.
+              I&apos;m also an avid fan of motorsports<Emoji name="racing-car" className="inline-block max-w-14"/> and
+              soccer<Emoji name="soccer-ball" className="inline-block max-w-14"/>.
+            </h2>
           </AnimatedText>
           {/* Contact Info */}
           <div className="space-y-2">
@@ -99,7 +104,7 @@ export default function AboutPage() {
             </div>
             <br />
             <div className="flex items-center gap-2">
-              <span className="text-sm">I&apos;m passionate about all things entrepreneurship, product management, engineering, and Human-Computer Interaction.</span>
+              <span className="text-sm">I&apos;m passionate about all things entrepreneurship, product management, vehicles, and Human-Computer Interaction.</span>
             </div>
             </AnimatedText>
           </div>
