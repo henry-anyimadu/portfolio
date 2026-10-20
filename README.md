@@ -116,3 +116,26 @@ Additional asset sources:
 Asset process: inspect originals, resize proportionally with Pillow LANCZOS to a maximum 2400px edge without upscaling, save WebP quality 88/method 6, preserve any ICC profile. Crop through Tailwind object-position utilities only.
 
 Validation: production build and strict TypeScript check passed; all 10 motion and rotation tests passed. The local page and four painting URLs returned HTTP 200. Browser interaction and visual checks did not run.
+
+## G1 Teleop Station (`/teleop`)
+
+A browser teleoperation station for a simulated Unitree G1, linked from the project cards as 06. It is built around the parts of a robot interface that matter when the robot is real: what stays on the robot, what the network does to the operator, and how failures look on screen.
+
+### How it runs
+
+- **Robot agent** (`lib/teleop/agent/`): runs in a Web Worker as the robot's own computer. MuJoCo (the official `@mujoco/mujoco` WebAssembly build) steps the G1 from MuJoCo Menagerie at 500 Hz with the pelvis bolted to a stand. The agent owns the watchdog, the mode machine, workspace and rate limits, weighted damped-least-squares IK for both 7-DoF arms, and fault detection (encoder disagreement, torque saturation, lost or frozen cameras).
+- **Emulated network** (`lib/teleop/link.ts`): an unreliable, unordered lane for commands, state and video, and a reliable, ordered lane with retransmits for control and events. Latency, jitter, loss and outages are adjustable live.
+- **Wire format** (`lib/teleop/proto/teleop.proto`): every message is a protobuf `Envelope`. Generated TypeScript is in `lib/teleop/gen/`; regenerate with `npm run teleop:proto`.
+- **Station** (`lib/teleop/station.ts`): input (keyboard, gamepad, pedal as a key), the 60 Hz command stream, one prioritised attention message, stuck detection, shift time accounting, and the control-plane mock that receives episode logs over its own path.
+- **Video** (`lib/teleop/render.ts`, `camera-feed.ts`): each camera renders in its own worker through OffscreenCanvas when the browser supports it, so a slow GPU costs image quality, never control latency. Frames carry body poses rather than encoded pixels.
+- **Fault suite** (`lib/teleop/fault-suite.ts`): drives the arms with the scripted operator and injects ten faults in turn, recording reaction time from the robot's own timestamped events.
+
+### Files and commands
+
+- The two workers (`lib/teleop/agent/agent.worker.ts`, `lib/teleop/render.worker.ts`) are bundled by esbuild into `public/teleop/workers/` and loaded by URL, so they work the same under Turbopack (`npm run dev`) and webpack (`npm run build`). `predev` and `prebuild` rebuild them automatically; `npm run teleop:workers` does it by hand.
+- `public/teleop/mujoco/` holds the MuJoCo WebAssembly runtime (3.16.0, copied from `node_modules/@mujoco/mujoco`). Keep it in step with the `@mujoco/mujoco` version.
+- `public/teleop/g1_workcell.bin` is the robot description: the Menagerie G1 with decimated meshes, hand sites, cameras, a test stand and a table, packed into one file. Rebuild it with `npm run teleop:model` (needs Python with `mujoco`, `trimesh` and `fast-simplification`, and a Menagerie checkout next to this repo).
+- Agent safety tests run in real time against the real model: `npm run test:teleop`.
+- `?video=off` turns off rendering for GPU-less test machines; telemetry and the suite still run.
+
+The G1 model is from [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie/tree/main/unitree_g1) (BSD-3-Clause, see `public/teleop/G1-LICENSE.txt`).

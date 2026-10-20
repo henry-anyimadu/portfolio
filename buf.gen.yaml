@@ -1,0 +1,7 @@
+version: v2
+inputs:
+  - directory: lib/teleop/proto
+plugins:
+  - local: protoc-gen-es
+    out: lib/teleop/gen
+    opt: target=ts

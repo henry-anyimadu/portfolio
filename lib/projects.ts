@@ -18,6 +18,7 @@ export type ProjectLink = Readonly<{
   href: string;
   icon?: 'fabric' | 'resume' | 'calendar';
   // Optional image URL or /public-relative path. Takes precedence over icon.
+  // An href starting with '/' is a page on this site and opens in the same tab.
   cover?: string;
 }>;
 
@@ -76,6 +77,10 @@ export const projects = [
   {
     kind: 'link', id: 'workday-calendar', number: '05', title: 'Workday to Calendar Parser',
     href: 'https://parser.henryany.com', icon: 'calendar',
+  },
+  {
+    kind: 'link', id: 'g1-teleop', number: '06', title: 'G1 Teleop Station',
+    href: '/teleop', cover: '/images/g1-teleop.webp',
   },
 ] as const satisfies readonly (Project | ProjectLink)[];
 

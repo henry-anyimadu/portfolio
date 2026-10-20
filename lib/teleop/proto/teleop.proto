@@ -1,0 +1,168 @@
+// Wire format between the operator station and the robot agent.
+//
+// Every frame on the link is one Envelope. The link has two lanes, like a
+// WebRTC data channel pair: an unreliable, unordered lane for high-rate
+// streams (commands, state, video), where a stale message is worse than a
+// missing one, and a reliable, ordered lane for things that must arrive
+// (control requests, events, acks).
+syntax = "proto3";
+
+package teleop.v1;
+
+message Vec3 {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+enum Mode {
+  MODE_UNSPECIFIED = 0;
+  MODE_BOOTING = 1;
+  MODE_DISARMED = 2;   // Motors hold the rest pose. Commands are ignored.
+  MODE_ARMED = 3;      // Ready. Moves only while the deadman is held.
+  MODE_ACTIVE = 4;     // Deadman held, commands fresh: the operator is driving.
+  MODE_HOLD = 5;       // Commands stale or a recoverable condition: freeze in place.
+  MODE_SAFE_STOP = 6;  // Link lost too long: retract to rest, then disarm.
+  MODE_FAULT = 7;      // Hardware fault detected on the robot. Needs an operator ack.
+  MODE_ESTOP = 8;      // Latched emergency stop. Needs a clear, then re-arm.
+}
+
+enum HoldReason {
+  HOLD_REASON_NONE = 0;
+  HOLD_REASON_STALE_COMMANDS = 1;
+  HOLD_REASON_DEADMAN_RELEASED = 2;
+  HOLD_REASON_PRIMARY_CAMERA = 3;
+  HOLD_REASON_TARGET_JUMP = 4;
+  HOLD_REASON_TORQUE_LIMIT = 5;
+}
+
+enum FaultCode {
+  FAULT_CODE_NONE = 0;
+  FAULT_CODE_ENCODER_DISAGREE = 1;  // Motor-side and joint-side encoders disagree.
+  FAULT_CODE_TORQUE_SATURATED = 2;  // An actuator has sat at its torque limit.
+  FAULT_CODE_CAMERA_LOST = 3;       // No new frames from a camera.
+  FAULT_CODE_CAMERA_FROZEN = 4;     // Frames arrive but the image has stopped changing.
+}
+
+// ---- Operator -> robot -------------------------------------------------
+
+// Sent at 60 Hz on the unreliable lane. Targets are absolute hand positions in
+// the workcell frame, so a lost packet is harmless: the next one supersedes it.
+message Command {
+  uint32 seq = 1;
+  double sent_at_ms = 2;  // Operator clock (epoch ms).
+  bool deadman = 3;
+  Vec3 left_target = 4;
+  Vec3 right_target = 5;
+}
+
+enum ControlKind {
+  CONTROL_KIND_UNSPECIFIED = 0;
+  CONTROL_KIND_ARM = 1;
+  CONTROL_KIND_DISARM = 2;
+  CONTROL_KIND_ESTOP = 3;
+  CONTROL_KIND_CLEAR_ESTOP = 4;
+  CONTROL_KIND_ACK_FAULT = 5;
+  CONTROL_KIND_START_EPISODE = 6;
+  CONTROL_KIND_ABORT_EPISODE = 7;
+}
+
+// Reliable lane. The robot answers every ControlRequest with an Event that
+// carries the same request_id, accepted or rejected with a reason.
+message ControlRequest {
+  uint32 request_id = 1;
+  ControlKind kind = 2;
+  Task task = 3;  // For START_EPISODE.
+}
+
+message Task {
+  string id = 1;
+  string pad = 2;    // Target pad name in the workcell.
+  string hand = 3;   // "left" | "right"
+  string label = 4;
+}
+
+message Ping {
+  uint32 seq = 1;
+  double sent_at_ms = 2;
+}
+
+// ---- Robot -> operator -------------------------------------------------
+
+// 50 Hz, unreliable lane. Everything the operator needs to know right now.
+message StateFrame {
+  uint32 seq = 1;
+  double sent_at_ms = 2;         // Robot clock.
+  Mode mode = 3;
+  HoldReason hold_reason = 4;
+  uint32 last_cmd_seq = 5;       // Newest command the robot has applied.
+  float cmd_age_ms = 6;          // How old that command was, on the robot's clock.
+  Vec3 left_hand = 7;
+  Vec3 right_hand = 8;
+  Vec3 left_target = 9;          // Targets as the robot is tracking them.
+  Vec3 right_target = 10;
+  repeated float joint_pos = 11;
+  repeated float torque_frac = 12;  // |torque| / limit per actuator, 0..1.
+  repeated FaultCode faults = 13;   // Currently active.
+  string episode_id = 14;
+  float episode_dist_m = 15;        // Hand-to-pad distance for the running episode.
+  uint32 outbox = 16;               // Episode logs waiting for the control plane.
+  float sim_load = 17;              // Physics time used per wall second, 0..1.
+}
+
+// 30 Hz per camera, unreliable lane. A real station would receive encoded
+// video; here a frame carries the scene snapshot the camera saw, and the
+// station renders it. Latency, loss and staleness behave the same way.
+message VideoFrame {
+  string camera = 1;           // "head" | "workcell"
+  uint32 frame_seq = 2;
+  double capture_at_ms = 3;    // Robot clock when the image was taken.
+  uint32 last_cmd_seq = 4;     // Newest command applied when the image was taken.
+  repeated float body_pose = 5;  // Per body: x y z qw qx qy qz.
+  Vec3 cam_pos = 6;
+  repeated float cam_mat = 7;    // 3x3 row-major.
+}
+
+enum EventKind {
+  EVENT_KIND_UNSPECIFIED = 0;
+  EVENT_KIND_MODE_CHANGED = 1;
+  EVENT_KIND_FAULT_RAISED = 2;
+  EVENT_KIND_FAULT_CLEARED = 3;
+  EVENT_KIND_REQUEST_ACCEPTED = 4;
+  EVENT_KIND_REQUEST_REJECTED = 5;
+  EVENT_KIND_EPISODE_STARTED = 6;
+  EVENT_KIND_EPISODE_SUCCEEDED = 7;
+  EVENT_KIND_EPISODE_ABORTED = 8;
+  EVENT_KIND_LOG_UPLOADED = 9;
+}
+
+// Reliable lane.
+message Event {
+  uint32 seq = 1;
+  double at_ms = 2;
+  EventKind kind = 3;
+  Mode mode = 4;
+  HoldReason hold_reason = 5;
+  FaultCode fault = 6;
+  uint32 request_id = 7;
+  string message = 8;
+  string episode_id = 9;
+  float duration_s = 10;
+}
+
+message Pong {
+  uint32 seq = 1;
+  double ping_sent_at_ms = 2;
+}
+
+message Envelope {
+  oneof body {
+    Command command = 1;
+    ControlRequest control = 2;
+    Ping ping = 3;
+    StateFrame state = 4;
+    VideoFrame video = 5;
+    Event event = 6;
+    Pong pong = 7;
+  }
+}
